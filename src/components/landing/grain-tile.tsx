@@ -20,12 +20,15 @@ interface GrainTileProps extends React.HTMLAttributes<HTMLDivElement> {
   tone?: Tone
   depth?: number
   grain?: number
+  /** Presses flush into its own flat shadow on click, like a Duolingo button. No hover state. */
+  pressable?: boolean
 }
 
 export function GrainTile({
   tone = "dark",
   depth = 8,
   grain = 0.85,
+  pressable = false,
   className,
   children,
   style,
@@ -34,11 +37,16 @@ export function GrainTile({
   const t = TONES[tone]
   return (
     <div
-      className={cn("relative overflow-hidden rounded-2xl", className)}
+      className={cn(
+        "relative overflow-hidden rounded-2xl",
+        pressable && "cursor-pointer transition-transform duration-100 ease-out active:translate-y-[var(--gt-depth)]",
+        className
+      )}
       style={{
         background: `linear-gradient(to bottom, ${t.from}, ${t.to})`,
         color: t.text,
         boxShadow: `0 ${depth}px 0 0 ${t.shadow}, 0 ${depth * 2 + 4}px ${depth * 3}px -${depth}px rgba(10,15,25,0.4)`,
+        ...(pressable ? { ["--gt-depth" as string]: `${depth}px` } : {}),
         ...style,
       }}
       {...props}

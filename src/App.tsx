@@ -5,6 +5,7 @@ import OverviewPage from "@/pages/overview"
 import AppBuilderPage from "@/pages/app-builder"
 import LandingPage from "@/pages/landing"
 import ModulesPage from "@/pages/modules"
+import ToolDetailPage from "@/pages/tool-detail"
 import {
   AccountingPage, InventoryPage, SettingsPage,
   ManufacturingPage, QualityControlPage, PurchasingPage, HRPage,
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/accounting" element={<AccountingPage />} />
         <Route path="/inventory" element={<InventoryPage />} />
         <Route path="/modules" element={<ModulesPage />} />
+        <Route path="/tools/:slug" element={<ToolDetailPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/manufacturing" element={<ManufacturingPage />} />
         <Route path="/quality-control" element={<QualityControlPage />} />

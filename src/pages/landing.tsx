@@ -2,10 +2,9 @@ import * as React from "react"
 import { Link } from "react-router-dom"
 import {
   Store, Boxes, Wallet, BarChart3, Building2, Users, Sparkles, ArrowRight,
-  Check, Star, Zap, ShieldCheck, Rocket,
+  Zap, ShieldCheck, Rocket,
 } from "lucide-react"
-import { GrainTile, GrainPill, type Tone } from "@/components/landing/grain-tile"
-import { Grain } from "@/components/ui/grain"
+import { GrainTile } from "@/components/landing/grain-tile"
 import { cn } from "@/lib/utils"
 
 export default function LandingPage() {
@@ -26,16 +25,13 @@ export default function LandingPage() {
 function Nav() {
   return (
     <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8 sm:py-5">
-      <Link to="/landing" className="flex items-center gap-2">
-        <GrainTile tone="orange" depth={4} className="grid size-9 place-items-center rounded-xl">
-          <Sparkles className="size-5" />
-        </GrainTile>
-        <span className="text-xl font-bold tracking-[-0.5px]">BuildERP</span>
+      <Link to="/landing" className="inline-flex items-center rounded-xl border border-white/15 bg-white/10 px-4 py-2">
+        <span className="text-xl font-medium tracking-[-0.5px] text-white">BuildERP</span>
       </Link>
-      <nav className="hidden items-center gap-1 text-sm font-medium text-muted-foreground sm:flex">
-        <a href="#fitur" className="rounded-lg px-3 py-2 hover:bg-accent hover:text-foreground transition-colors">Fitur</a>
-        <a href="#kenapa" className="rounded-lg px-3 py-2 hover:bg-accent hover:text-foreground transition-colors">Kenapa kami</a>
-        <a href="#harga" className="rounded-lg px-3 py-2 hover:bg-accent hover:text-foreground transition-colors">Harga</a>
+      <nav className="hidden items-center gap-1 text-sm font-medium text-white/80 sm:flex">
+        <a href="#fitur" className="rounded-lg px-3 py-2 hover:bg-white/10 hover:text-white transition-colors">Fitur</a>
+        <a href="#kenapa" className="rounded-lg px-3 py-2 hover:bg-white/10 hover:text-white transition-colors">Kenapa kami</a>
+        <a href="#harga" className="rounded-lg px-3 py-2 hover:bg-white/10 hover:text-white transition-colors">Harga</a>
       </nav>
       <Link
         to="/"
@@ -50,34 +46,24 @@ function Nav() {
 /* ─────────────────────────────── Hero ────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative mx-auto max-w-5xl px-5 pb-16 pt-10 text-center sm:px-8 sm:pt-20">
-      {/* floating grain pills */}
-      <GrainPill tone="blue" icon={<Boxes className="size-4" />} label="Stok real-time" className="left-2 top-6 -rotate-6 sm:left-6 lg:left-0" />
-      <GrainPill tone="green" icon={<Wallet className="size-4" />} label="Pembukuan otomatis" className="right-2 top-10 rotate-3 sm:right-6 lg:right-0" />
-      <GrainPill tone="orange" icon={<Store className="size-4" />} label="Kasir ngebut" className="bottom-8 left-4 rotate-6 sm:left-10 lg:left-4" />
-      <GrainPill tone="blue" icon={<BarChart3 className="size-4" />} label="Analitik harian" className="bottom-6 right-4 -rotate-3 sm:right-12 lg:right-6" />
-
-      <span className="inline-flex items-center gap-1.5 rounded-full border bg-component px-3 py-1 text-sm font-medium text-muted-foreground shadow-sm">
-        <Sparkles className="size-3.5 text-[#ef5c0c]" /> Next-level mini ERP buat UMKM
+    <section className="mx-auto max-w-4xl px-5 pb-16 pt-12 text-center sm:px-8 sm:pt-20">
+      <span className="inline-flex items-center gap-1.5 rounded-xl border bg-component px-3 py-1 text-sm font-medium text-muted-foreground shadow-sm">
+        Next-level mini ERP buat UMKM
       </span>
 
-      <h1 className="mx-auto mt-6 max-w-3xl text-[2.5rem] font-bold leading-[1.05] tracking-[-1.5px] sm:text-[4.25rem]">
-        ERP mini buat UMKM.{" "}
-        <span className="relative inline-block">
-          <span className="relative z-10">Tapi bikin nagih.</span>
-          <span className="absolute inset-x-0 bottom-1.5 -z-0 h-4 rounded bg-[#ff9d3c]/40 sm:bottom-2 sm:h-6" />
-        </span>
+      <h1 className="mx-auto mt-6 max-w-3xl text-[2.5rem] font-semibold leading-[1.05] tracking-[-1.5px] text-white sm:text-[4rem]">
+        Sistem komplit untuk UMKM.{" "}100% gratis.
       </h1>
 
-      <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-xl">
+      <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/90 sm:text-xl">
         Kasir, stok, keuangan, sampai laporan — satu app yang enteng, rapi, dan
         enak dipakai tiap hari. Nggak ribet, nggak bikin pusing.
       </p>
 
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Link to="/">
-          <GrainTile tone="orange" depth={6} className="rounded-2xl px-7 py-3.5">
-            <span className="flex items-center gap-2 text-base font-semibold">
+          <GrainTile tone="orange" depth={5} className="rounded-2xl px-7 py-3.5">
+            <span className="flex items-center gap-2 text-base font-medium">
               <Rocket className="size-5" /> Mulai gratis
             </span>
           </GrainTile>
@@ -87,28 +73,28 @@ function Hero() {
         </a>
       </div>
 
-      <p className="mt-4 text-sm text-muted-foreground">Gratis 14 hari · Tanpa kartu kredit</p>
+      <p className="mt-4 text-sm text-white/80">Gratis 14 hari · Tanpa kartu kredit</p>
     </section>
   )
 }
 
 /* ────────────────────────────── Stats ────────────────────────────── */
-const STATS: { value: string; label: string; tone: Tone }[] = [
-  { value: "2.400+", label: "UMKM aktif", tone: "orange" },
-  { value: "Rp 180M+", label: "Transaksi diproses", tone: "blue" },
-  { value: "99,9%", label: "Uptime", tone: "green" },
-  { value: "4,9★", label: "Rating pengguna", tone: "orange" },
+const STATS = [
+  { value: "2.400+", label: "UMKM aktif" },
+  { value: "Rp 180M+", label: "Transaksi diproses" },
+  { value: "99,9%", label: "Uptime" },
+  { value: "4,9★", label: "Rating pengguna" },
 ]
 
 function Stats() {
   return (
-    <section className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+    <section className="mx-auto max-w-4xl px-5 py-6 sm:px-8">
+      <div className="grid grid-cols-2 divide-y divide-x rounded-2xl border bg-component sm:grid-cols-4 sm:divide-y-0">
         {STATS.map((s) => (
-          <GrainTile key={s.label} tone={s.tone} depth={5} className="px-4 py-5 text-center">
-            <div className="text-[1.75rem] font-bold tabular leading-none">{s.value}</div>
-            <div className="mt-1.5 text-sm font-medium opacity-90">{s.label}</div>
-          </GrainTile>
+          <div key={s.label} className="flex flex-col items-center gap-1 px-4 py-5 text-center">
+            <div className="text-2xl font-medium tabular leading-none">{s.value}</div>
+            <div className="text-sm text-muted-foreground">{s.label}</div>
+          </div>
         ))}
       </div>
     </section>
@@ -116,13 +102,13 @@ function Stats() {
 }
 
 /* ───────────────────────────── Features ──────────────────────────── */
-const FEATURES: { icon: React.ReactNode; title: string; desc: string; tone: Tone }[] = [
-  { icon: <Store className="size-6" />, title: "Kasir / POS", desc: "Transaksi ngebut, struk rapi, jalan terus walau internet mati.", tone: "orange" },
-  { icon: <Boxes className="size-6" />, title: "Stok & Gudang", desc: "Stok real-time, alarm barang menipis, dukung multi-gudang.", tone: "blue" },
-  { icon: <Wallet className="size-6" />, title: "Pembukuan", desc: "Jurnal & laporan keuangan otomatis. Kamu tinggal terima beres.", tone: "green" },
-  { icon: <BarChart3 className="size-6" />, title: "Analitik", desc: "Grafik penjualan & produk terlaris yang update tiap hari.", tone: "blue" },
-  { icon: <Building2 className="size-6" />, title: "Multi-cabang", desc: "Pantau semua toko dari satu dashboard, di mana pun kamu.", tone: "orange" },
-  { icon: <Users className="size-6" />, title: "Pelanggan", desc: "Data pelanggan, poin loyalti, dan promo yang gampang diatur.", tone: "green" },
+const FEATURES: { icon: React.ReactNode; title: string; desc: string }[] = [
+  { icon: <Store className="size-5" />, title: "Kasir / POS", desc: "Transaksi ngebut, struk rapi, jalan terus walau internet mati." },
+  { icon: <Boxes className="size-5" />, title: "Stok & Gudang", desc: "Stok real-time, alarm barang menipis, dukung multi-gudang." },
+  { icon: <Wallet className="size-5" />, title: "Pembukuan", desc: "Jurnal & laporan keuangan otomatis. Kamu tinggal terima beres." },
+  { icon: <BarChart3 className="size-5" />, title: "Analitik", desc: "Grafik penjualan & produk terlaris yang update tiap hari." },
+  { icon: <Building2 className="size-5" />, title: "Multi-cabang", desc: "Pantau semua toko dari satu dashboard, di mana pun kamu." },
+  { icon: <Users className="size-5" />, title: "Pelanggan", desc: "Data pelanggan, poin loyalti, dan promo yang gampang diatur." },
 ]
 
 function Features() {
@@ -135,10 +121,10 @@ function Features() {
       />
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {FEATURES.map((f) => (
-          <GrainTile key={f.title} tone={f.tone} depth={7} className="flex flex-col gap-3 p-5">
-            <span className="grid size-11 place-items-center rounded-xl bg-white/20">{f.icon}</span>
-            <h3 className="text-xl font-bold tracking-[-0.3px]">{f.title}</h3>
-            <p className="text-sm leading-relaxed opacity-90">{f.desc}</p>
+          <GrainTile key={f.title} tone="dark" depth={6} className="flex flex-col gap-3 p-5">
+            <span className="grid size-10 place-items-center rounded-xl bg-white/10">{f.icon}</span>
+            <h3 className="text-xl font-medium tracking-[-0.3px]">{f.title}</h3>
+            <p className="text-sm leading-relaxed text-white/70">{f.desc}</p>
           </GrainTile>
         ))}
       </div>
@@ -147,10 +133,15 @@ function Features() {
 }
 
 /* ──────────────────────────── Everything ─────────────────────────── */
-const REASONS: { icon: React.ReactNode; title: string; desc: string; tone: Tone }[] = [
-  { icon: <Zap className="size-5" />, title: "Enteng & ngebut", desc: "Dibuat buat HP kentang sekalipun. Buka app, langsung jalan.", tone: "orange" },
-  { icon: <ShieldCheck className="size-5" />, title: "Data aman", desc: "Backup otomatis di cloud. Data bisnismu nggak akan hilang.", tone: "blue" },
-  { icon: <Sparkles className="size-5" />, title: "Enak dipakai", desc: "Desain rapi & minimalis. Karyawan baru langsung bisa.", tone: "green" },
+const REASONS: React.ReactNode[] = [
+  <Zap className="size-5" key="z" />,
+  <ShieldCheck className="size-5" key="s" />,
+  <Sparkles className="size-5" key="k" />,
+]
+const REASON_DATA = [
+  { title: "Enteng & ngebut", desc: "Dibuat buat HP kentang sekalipun. Buka app, langsung jalan." },
+  { title: "Data aman", desc: "Backup otomatis di cloud. Data bisnismu nggak akan hilang." },
+  { title: "Enak dipakai", desc: "Desain rapi & minimalis. Karyawan baru langsung bisa." },
 ]
 
 function Everything() {
@@ -161,50 +152,48 @@ function Everything() {
         title="Bukan ERP korporat yang bikin pusing"
         subtitle="Kami rancang khusus buat warung, toko, dan bisnis kecil yang mau naik kelas."
       />
-      <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-        {/* reasons list */}
+      <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-center">
+        {/* reasons — neutral cards */}
         <div className="flex flex-col gap-3">
-          {REASONS.map((r) => (
+          {REASON_DATA.map((r, i) => (
             <div key={r.title} className="flex items-start gap-4 rounded-2xl border bg-component p-4 shadow-sm">
-              <GrainTile tone={r.tone} depth={4} className="grid size-11 shrink-0 place-items-center rounded-xl">
-                {r.icon}
+              <GrainTile tone="dark" depth={3} className="grid size-10 shrink-0 place-items-center rounded-xl">
+                {REASONS[i]}
               </GrainTile>
               <div className="flex flex-col gap-0.5">
-                <h3 className="text-base font-semibold">{r.title}</h3>
+                <h3 className="text-base font-medium">{r.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* mock app preview inside an orange grain card */}
-        <div className="relative overflow-hidden rounded-3xl p-4 sm:p-6"
-          style={{ background: "radial-gradient(120% 130% at 50% 0%, #ffcf9c 0%, #ff9436 40%, #f5620f 100%)" }}>
-          <Grain opacity={0.95} blend="overlay" size={110} />
-          <div className="relative z-10 rounded-2xl border bg-background p-4 shadow-2xl">
+        {/* mock app preview inside a dark grain card */}
+        <GrainTile tone="dark" depth={7} className="p-4 sm:p-5">
+          <div className="rounded-2xl border border-white/10 bg-[#0d0e11] p-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold">Dashboard</span>
+              <span className="text-sm font-medium text-white">Dashboard</span>
               <span className="flex gap-1">
-                <span className="size-2 rounded-full bg-[#ff5f57]" />
-                <span className="size-2 rounded-full bg-[#febc2e]" />
-                <span className="size-2 rounded-full bg-[#28c840]" />
+                <span className="size-2 rounded-full bg-white/20" />
+                <span className="size-2 rounded-full bg-white/20" />
+                <span className="size-2 rounded-full bg-white/20" />
               </span>
             </div>
             <div className="mt-3 grid grid-cols-2 gap-2">
-              {[["Omzet", "71 jt", "green"], ["Order", "1.284", "blue"], ["Produk", "342", "orange"], ["Cabang", "6", "blue"]].map(([k, v, tone]) => (
-                <GrainTile key={k} tone={tone as Tone} depth={3} className="p-2.5">
-                  <div className="text-[10px] font-medium opacity-90">{k}</div>
-                  <div className="text-base font-bold tabular">{v}</div>
-                </GrainTile>
+              {[["Omzet", "71 jt"], ["Order", "1.284"], ["Produk", "342"], ["Cabang", "6"]].map(([k, v]) => (
+                <div key={k} className="rounded-xl border border-white/10 bg-white/5 p-2.5">
+                  <div className="text-[10px] text-white/50">{k}</div>
+                  <div className="text-base font-medium tabular text-white">{v}</div>
+                </div>
               ))}
             </div>
-            <div className="mt-2 flex h-16 items-end gap-1.5 rounded-xl border p-2">
+            <div className="mt-2 flex h-16 items-end gap-1.5 rounded-xl border border-white/10 p-2">
               {[40, 65, 50, 80, 60, 95, 75, 88].map((h, i) => (
-                <span key={i} className="flex-1 rounded-sm bg-[#ff9436]" style={{ height: `${h}%` }} />
+                <span key={i} className={cn("flex-1 rounded-sm", i === 5 ? "bg-[#ff9436]" : "bg-white/25")} style={{ height: `${h}%` }} />
               ))}
             </div>
           </div>
-        </div>
+        </GrainTile>
       </div>
     </section>
   )
@@ -214,28 +203,24 @@ function Everything() {
 function BigCta() {
   return (
     <section id="harga" className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
-      <div className="relative overflow-hidden rounded-[2rem] px-6 py-14 text-center shadow-[0_12px_0_0_#124a9c,0_28px_44px_-14px_rgba(20,60,120,0.55)] sm:px-10 sm:py-20"
-        style={{ background: "radial-gradient(120% 140% at 50% 0%, #7cc0ff 0%, #3d8bf0 42%, #1f6fe0 100%)" }}>
-        <Grain opacity={0.95} blend="overlay" size={110} />
-        <GrainPill tone="orange" icon={<Star className="size-4" />} label="Mythos class" className="left-6 top-8 -rotate-6 sm:left-16" />
-        <GrainPill tone="green" icon={<Check className="size-4" />} label="Stabil" className="right-6 top-9 rotate-3 sm:right-16" />
-        <div className="relative z-10 flex flex-col items-center text-white">
-          <h2 className="max-w-2xl text-[2rem] font-bold leading-tight tracking-[-1px] sm:text-[3.25rem]">
+      <GrainTile tone="dark" depth={9} className="rounded-[2rem] px-6 py-14 text-center sm:px-10 sm:py-20">
+        <div className="flex flex-col items-center text-white">
+          <h2 className="max-w-2xl text-[2rem] font-semibold leading-tight tracking-[-1px] sm:text-[3rem]">
             Siap bikin bisnismu naik kelas?
           </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-white/90 sm:text-xl">
+          <p className="mt-4 max-w-md text-base leading-relaxed text-white/70 sm:text-xl">
             Gabung 2.400+ UMKM yang udah ngerapihin bisnisnya pakai BuildERP.
           </p>
           <Link to="/" className="mt-8">
-            <GrainTile tone="cream" depth={6} className="rounded-2xl px-8 py-4">
-              <span className="flex items-center gap-2 text-base font-bold">
+            <GrainTile tone="orange" depth={5} className="rounded-2xl px-8 py-4">
+              <span className="flex items-center gap-2 text-base font-medium">
                 <Rocket className="size-5" /> Mulai sekarang, gratis
               </span>
             </GrainTile>
           </Link>
-          <p className="mt-4 text-sm text-white/80">Setup 5 menit · Bisa dibatalkan kapan aja</p>
+          <p className="mt-4 text-sm text-white/60">Setup 5 menit · Bisa dibatalkan kapan aja</p>
         </div>
-      </div>
+      </GrainTile>
     </section>
   )
 }
@@ -244,29 +229,26 @@ function BigCta() {
 function Footer() {
   return (
     <footer className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
-      <div className="flex flex-col items-center justify-between gap-4 border-t pt-8 sm:flex-row">
-        <div className="flex items-center gap-2">
-          <GrainTile tone="orange" depth={3} className="grid size-7 place-items-center rounded-lg">
-            <Sparkles className="size-4" />
-          </GrainTile>
-          <span className="font-bold tracking-[-0.5px]">BuildERP</span>
+      <div className="flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 sm:flex-row">
+        <div className="inline-flex items-center rounded-xl border border-white/15 bg-white/10 px-3.5 py-1.5">
+          <span className="font-medium tracking-[-0.5px] text-white">BuildERP</span>
         </div>
-        <p className="text-sm text-muted-foreground">© 2026 BuildERP · Dibuat buat UMKM Indonesia</p>
-        <Link to="/" className="text-sm font-medium hover:underline">Masuk App →</Link>
+        <p className="text-sm text-white/80">© 2026 BuildERP · Dibuat buat UMKM Indonesia</p>
+        <Link to="/" className="text-sm font-medium text-white hover:underline">Masuk App →</Link>
       </div>
     </footer>
   )
 }
 
 /* ───────────────────────────── shared ────────────────────────────── */
-function SectionHead({ eyebrow, title, subtitle, className }: { eyebrow: string; title: string; subtitle: string; className?: string }) {
+function SectionHead({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle: string }) {
   return (
-    <div className={cn("mx-auto max-w-2xl text-center", className)}>
-      <span className="inline-flex items-center gap-1.5 rounded-full border bg-component px-3 py-1 text-sm font-medium text-muted-foreground shadow-sm">
+    <div className="mx-auto max-w-2xl text-center">
+      <span className="inline-flex items-center gap-1.5 rounded-xl border bg-component px-3 py-1 text-sm font-medium text-muted-foreground shadow-sm">
         {eyebrow}
       </span>
-      <h2 className="mt-4 text-[1.75rem] font-bold leading-tight tracking-[-0.7px] sm:text-[2.5rem]">{title}</h2>
-      <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-xl">{subtitle}</p>
+      <h2 className="mt-4 text-[1.75rem] font-medium leading-tight tracking-[-0.7px] text-white sm:text-[2.5rem]">{title}</h2>
+      <p className="mt-3 text-base leading-relaxed text-white/80 sm:text-xl">{subtitle}</p>
     </div>
   )
 }

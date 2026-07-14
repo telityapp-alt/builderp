@@ -31,7 +31,7 @@ const NAV: NavItem[] = [
   { href: "/builder", label: "App Builder", Outlined: BuilderOutlined, Filled: BuilderFilled, match: (p) => p.startsWith("/builder") },
   { href: "/accounting", label: "Accounting", Outlined: AccountingOutlined, Filled: AccountingFilled, match: (p) => p.startsWith("/accounting") },
   { href: "/inventory", label: "Inventory", Outlined: InventoryOutlined, Filled: InventoryFilled, match: (p) => p.startsWith("/inventory") },
-  { href: "/settings", label: "Settings", Outlined: SettingsOutlined, Filled: SettingsFilled, match: (p) => p.startsWith("/settings") },
+  { href: "/modules", label: "Modules", Outlined: SettingsOutlined, Filled: SettingsFilled, match: (p) => p.startsWith("/modules") },
 ]
 
 const DOCK_SHADOW =

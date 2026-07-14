@@ -4,7 +4,11 @@ import Dock from "@/components/dock/dock"
 import OverviewPage from "@/pages/overview"
 import AppBuilderPage from "@/pages/app-builder"
 import LandingPage from "@/pages/landing"
-import { AccountingPage, InventoryPage, SettingsPage } from "@/pages/placeholder"
+import ModulesPage from "@/pages/modules"
+import {
+  AccountingPage, InventoryPage, SettingsPage,
+  ManufacturingPage, QualityControlPage, PurchasingPage, HRPage,
+} from "@/pages/placeholder"
 
 export default function App() {
   const { pathname } = useLocation()
@@ -19,7 +23,12 @@ export default function App() {
         <Route path="/builder" element={<AppBuilderPage />} />
         <Route path="/accounting" element={<AccountingPage />} />
         <Route path="/inventory" element={<InventoryPage />} />
+        <Route path="/modules" element={<ModulesPage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/manufacturing" element={<ManufacturingPage />} />
+        <Route path="/quality-control" element={<QualityControlPage />} />
+        <Route path="/purchasing" element={<PurchasingPage />} />
+        <Route path="/hr" element={<HRPage />} />
         <Route path="/landing" element={<LandingPage />} />
       </Routes>
       {!hideDock && <Dock />}

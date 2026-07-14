@@ -84,3 +84,63 @@ export function SettingsPage() {
     />
   )
 }
+
+export function ManufacturingPage() {
+  return (
+    <PlaceholderPage
+      title="Manufacturing"
+      description="Work order, bill of material, dan proses produksi."
+      modules={[
+        { name: "Work Order", note: "Rencanakan dan lacak proses produksi per batch." },
+        { name: "Bill of Material", note: "Daftar komponen & bahan baku per produk jadi." },
+        { name: "Jadwal Produksi", note: "Kapasitas mesin & lini produksi per periode." },
+        { name: "Biaya Produksi", note: "Hitung HPP dari bahan, tenaga kerja, dan overhead." },
+      ]}
+    />
+  )
+}
+
+export function QualityControlPage() {
+  return (
+    <PlaceholderPage
+      title="Quality Control"
+      description="Inspeksi mutu, pencatatan cacat, dan standar produksi."
+      modules={[
+        { name: "Inspeksi Masuk", note: "Cek kualitas bahan baku dari supplier." },
+        { name: "Inspeksi Produksi", note: "Sampling mutu di tiap tahap produksi." },
+        { name: "Laporan Cacat", note: "Catat dan lacak akar masalah defect produk." },
+        { name: "Standar Mutu", note: "Kriteria & checklist QC per jenis produk." },
+      ]}
+    />
+  )
+}
+
+export function PurchasingPage() {
+  return (
+    <PlaceholderPage
+      title="Purchasing"
+      description="Pesanan pembelian dan hubungan dengan supplier."
+      modules={[
+        { name: "Purchase Request", note: "Ajuan kebutuhan barang dari tiap divisi." },
+        { name: "Purchase Order", note: "Pesanan resmi ke supplier dengan approval." },
+        { name: "Data Supplier", note: "Kontak, harga, dan riwayat transaksi supplier." },
+        { name: "Penerimaan Barang", note: "Cocokkan barang masuk dengan PO terkait." },
+      ]}
+    />
+  )
+}
+
+export function HRPage() {
+  return (
+    <PlaceholderPage
+      title="HR & Payroll"
+      description="Data karyawan, absensi, dan penggajian."
+      modules={[
+        { name: "Data Karyawan", note: "Profil, kontrak, dan dokumen tiap karyawan." },
+        { name: "Absensi", note: "Kehadiran, cuti, dan izin karyawan." },
+        { name: "Penggajian", note: "Hitung gaji, tunjangan, dan potongan otomatis." },
+        { name: "Evaluasi Kinerja", note: "Penilaian performa karyawan per periode." },
+      ]}
+    />
+  )
+}

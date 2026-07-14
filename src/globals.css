@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Fonts (served from /public/fonts) ───────────────────────── */
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/soehne-buch.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/soehne-kraftig.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Plantijn';
+  src: url('/fonts/martina-plantijn-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-sohne: 'Sohne', sans-serif;
+  --font-plantijn: 'Plantijn', serif;
+  --font-handwritten: 'Kalam', 'Caveat', cursive;
+}
+
+/* ── Design tokens (1:1 with portfolio, base hue 220) ────────── */
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 5% 13%;
+    --component: 220 7% 100%;
+    --component-active: 220 7% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 7% 3.9%;
+    --primary: 220 7% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 4.8% 95.9%;
+    --secondary-foreground: 220 7% 10%;
+    --muted: 220 4.8% 95.9%;
+    --muted-foreground: 220 3% 40%;
+    --accent: 220 7% 93%;
+    --accent-foreground: 220 7% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 71% 40%;
+    --warning: 38 92% 50%;
+    --border: 220 7% 90%;
+    --input: 220 7% 85%;
+    --ring: 220 7% 10%;
+    --sidebar: 220 7% 95%;
+    --radius: 0.5rem;
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --component: 220 13% 8%;
+    --component-active: 220 13% 14%;
+    --popover: 220 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 220 5.9% 10%;
+    --secondary: 220 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 3.7% 15.9%;
+    --muted-foreground: 0 0% 71%;
+    --accent: 220 13% 11%;
+    --accent-foreground: 0 13% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 65% 45%;
+    --warning: 38 92% 55%;
+    --border: 220 3.7% 15.9%;
+    --input: 220 3.7% 15.9%;
+    --ring: 220 4.9% 83.9%;
+    --sidebar: 220 13% 8%;
+
+    --chart-1: 220 70% 60%;
+    --chart-2: 160 60% 55%;
+    --chart-3: 30 80% 60%;
+    --chart-4: 280 65% 68%;
+    --chart-5: 340 75% 62%;
+  }
+}
+
+/* ── Base element rules ──────────────────────────────────────── */
+@layer base {
+  * { @apply border-border; }
+
+  body {
+    @apply bg-background font-sans text-foreground selection:bg-[#95a5ac40];
+  }
+
+  h1, h2, h3 { @apply font-medium; }
+  h1 { @apply text-xl; }
+  h2 { @apply text-xl; }
+  h3 { @apply text-base tracking-[-0.21px]; }
+  p  { @apply text-base tracking-[-0.21px]; }
+  em { @apply font-serif font-medium; }
+}
+
+/* ── Entrance stagger (orchestration) ────────────────────────── */
+.orchestration {
+  --delay: 120ms;
+}
+.orchestration > * {
+  animation: enter 0.6s ease both;
+  animation-delay: calc(var(--delay) * var(--stagger));
+}
+@keyframes enter {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tabular numbers (metrics / tables) ──────────────────────── */
+.tabular {
+  font-feature-settings: "tnum", "zero";
+}
+
+/* ── Scroll lock ─────────────────────────────────────────────── */
+body.no-scroll { overflow: hidden; }
+
+/* ── Hide audio toggle on touch devices ──────────────────────── */
+@media (hover: none) {
+  .audio-toggle-button { display: none; }
+}
+
+/* ── Thin scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0); }
+::-webkit-scrollbar-thumb { background: #888; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
